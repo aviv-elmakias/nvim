@@ -21,6 +21,15 @@ end,
 once = true,
 })
 
+vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost" }, {
+    callback = function()
+        local lint_status, lint = pcall(require, "lint")
+        if lint_status then
+            lint.try_lint()
+        end
+    end,
+})
+
 -- Auto create dir when saving a file, in case some intermediate directory does not exist
 -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 --   group = augroup("auto_create_dir"),

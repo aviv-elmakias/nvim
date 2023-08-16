@@ -118,8 +118,8 @@ return {
               'lua_ls',
               'cssls',
               'html',
-              -- 'pyright',
-              'ruff_lsp',
+              'pyright',
+              -- 'ruff_lsp',
             },
           }
         end,
