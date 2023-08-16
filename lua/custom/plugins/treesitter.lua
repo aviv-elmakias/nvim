@@ -1,85 +1,89 @@
--- Highlight, edit, and navigate code
 return {
-  'nvim-treesitter/nvim-treesitter',
-  event = { 'BufReadPost', 'BufNewFile' },
-  dependencies = {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-  },
-  build = ':TSUpdate',
-  opts = {
-    {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    version = false, -- last release is way too old and doesn't work on Windows
+    build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
       ensure_installed = {
-        'vim',
-        'lua',
-        'html',
-        'css',
-        'javascript',
-        'typescript',
-        'tsx',
-        'c',
-        'markdown',
-        'markdown_inline',
-        'python',
-      },
-      indent = {
-        enable = true,
-        disable = {
-          'python',
-        },
+        "bash",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "query",
+        "regex",
+        "tsx",
+        "typescript",
+        "vim",
+        "yaml",
+        "php",
+        "scss",
+        "cpp",
+        "java",
+        "graphql",
       },
       highlight = { enable = true },
-      incremental_selection = {
+      indent = { enable = true, disable = { "yaml", "python", "html" } },
+      context_commentstring = { enable = true },
+      rainbow = {
         enable = true,
-        keymaps = {
-          init_selection = '<c-space>',
-          node_incremental = '<c-space>',
-          scope_incremental = '<c-s>',
-          node_decremental = '<M-space>',
-        },
+        query = "rainbow-parens",
+        disable = { "jsx", "html" },
       },
-      textobjects = {
-        select = {
-          enable = true,
-          lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-          keymaps = {
-            -- You can use the capture groups defined in textobjects.scm
-            ['aa'] = '@parameter.outer',
-            ['ia'] = '@parameter.inner',
-            ['af'] = '@function.outer',
-            ['if'] = '@function.inner',
-            ['ac'] = '@class.outer',
-            ['ic'] = '@class.inner',
-          },
-        },
-        move = {
-          enable = true,
-          set_jumps = true, -- whether to set jumps in the jumplist
-          goto_next_start = {
-            [']m'] = '@function.outer',
-            [']]'] = '@class.outer',
-          },
-          goto_next_end = {
-            [']M'] = '@function.outer',
-            [']['] = '@class.outer',
-          },
-          goto_previous_start = {
-            ['[m'] = '@function.outer',
-            ['[['] = '@class.outer',
-          },
-          goto_previous_end = {
-            ['[M'] = '@function.outer',
-            ['[]'] = '@class.outer',
-          },
-        },
-        swap = {
-          enable = true,
-          swap_next = {
-            ['<leader>a'] = '@parameter.inner',
-          },
-          swap_previous = {
-            ['<leader>A'] = '@parameter.inner',
-          },
-        },
+    },
+    config = function(_, opts)
+      require("nvim-treesitter.configs").setup(opts)
+    end,
+  },
+
+  {
+    "HiPhish/nvim-ts-rainbow2",
+    event = "BufReadPost",
+  },
+
+  {
+    "windwp/nvim-ts-autotag",
+    ft = {
+      "html",
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact",
+      "svelte",
+      "vue",
+      "tsx",
+      "jsx",
+      "rescript",
+      "xml",
+      "php",
+      "markdown",
+      "glimmer",
+      "handlebars",
+      "hbs",
+    },
+    opts = {
+      enable = true,
+      filetypes = {
+        "html",
+        "javascript",
+        "typescript",
+        "javascriptreact",
+        "typescriptreact",
+        "svelte",
+        "vue",
+        "tsx",
+        "jsx",
+        "rescript",
+        "xml",
+        "php",
+        "markdown",
+        "glimmer",
+        "handlebars",
+        "hbs",
       },
     },
   },
