@@ -39,12 +39,6 @@ return {
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
-
-  {
-    "HiPhish/nvim-ts-rainbow2",
-    event = "BufReadPost",
-  },
-
   {
     "windwp/nvim-ts-autotag",
     ft = {
