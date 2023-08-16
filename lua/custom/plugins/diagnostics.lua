@@ -4,14 +4,5 @@ return {
   },
   {
     'folke/trouble.nvim',
-  },
-  {
-    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
-    enabled = false,
-    config = function()
-      local lsp_lines = require 'lsp_lines'
-      vim.diagnostic.config { virtual_text = false }
-      lsp_lines.setup()
-    end,
-  },
+  }
 }
