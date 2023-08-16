@@ -22,6 +22,9 @@ return {
     end,
   },
   {
+    "gbprod/cutlass.nvim",
+  },
+  {
     "chrishrb/gx.nvim",
     event = { "BufEnter" },
     dependencies = { "nvim-lua/plenary.nvim" },
