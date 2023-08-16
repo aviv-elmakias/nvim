@@ -51,16 +51,10 @@ end, {
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
--- LSP Related
-vim.keymap.set('n', '<leader>lf', function(bufnr)
-  vim.lsp.buf.format {
-    filter = function(client)
-      -- apply whatever logic you want (in this example, we'll only use null-ls)
-      return client.name == 'null-ls'
-    end,
-    bufnr = bufnr,
-  }
-end, { desc = 'LSP Format' })
+-- Format Related
+vim.keymap.set('n', '<leader>lf', function()
+  vim.cmd [[Format]]
+end, { desc = 'Format' })
 
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', { desc = 'LSP Definition' })
 vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', { desc = 'LSP Implementation' })
