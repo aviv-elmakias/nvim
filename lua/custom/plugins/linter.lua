@@ -19,6 +19,9 @@ return {
         },
         python = {
           "ruff"
+        },
+        lua = {
+          "selene"
         }
       }
     end
