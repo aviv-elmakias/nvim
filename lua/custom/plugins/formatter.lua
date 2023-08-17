@@ -24,7 +24,7 @@ return {
             require('formatter.filetypes.python').black,
             {
               exe = 'isort',
-              args = { '-q', '-', '--profile=black'},
+              args = { '-q', '-', '--profile=black' },
               stdin = true,
             },
           },
