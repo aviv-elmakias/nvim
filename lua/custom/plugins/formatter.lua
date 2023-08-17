@@ -3,10 +3,10 @@ return {
     'mhartington/formatter.nvim',
     config = function()
       -- Utilities for creating configurations
-      local util = require "formatter.util"
+      local util = require 'formatter.util'
 
       -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
-      require("formatter").setup {
+      require('formatter').setup {
         -- Enable or disable logging
         logging = true,
         -- Set the log level
@@ -18,38 +18,42 @@ return {
           lua = {
             -- "formatter.filetypes.lua" defines default configurations for the
             -- "lua" filetype
-            require("formatter.filetypes.lua").stylua,
+            require('formatter.filetypes.lua').stylua,
           },
           python = {
-            require("formatter.filetypes.python").black,
-            -- require("formatter.filetypes.python").isort,
+            require('formatter.filetypes.python').black,
+            {
+              exe = 'isort',
+              args = { '-q', '-', '--profile=black'},
+              stdin = true,
+            },
           },
 
           javascript = {
-            require("formatter.filetypes.javascript").prettierd,
-            require("formatter.filetypes.javascript").eslint_d,
+            require('formatter.filetypes.javascript').prettierd,
+            require('formatter.filetypes.javascript').eslint_d,
           },
           typescript = {
-            require("formatter.filetypes.javascript").prettierd,
-            require("formatter.filetypes.javascript").eslint_d,
+            require('formatter.filetypes.javascript').prettierd,
+            require('formatter.filetypes.javascript').eslint_d,
           },
           javascriptreact = {
-            require("formatter.filetypes.javascript").prettierd,
-            require("formatter.filetypes.javascript").eslint_d,
+            require('formatter.filetypes.javascript').prettierd,
+            require('formatter.filetypes.javascript').eslint_d,
           },
           typescriptreact = {
-            require("formatter.filetypes.javascript").prettierd,
-            require("formatter.filetypes.javascript").eslint_d,
+            require('formatter.filetypes.javascript').prettierd,
+            require('formatter.filetypes.javascript').eslint_d,
           },
           -- Use the special "*" filetype for defining formatter configurations on
           -- any filetype
-          ["*"] = {
+          ['*'] = {
             -- "formatter.filetypes.any" defines default configurations for any
             -- filetype
-            require("formatter.filetypes.any").remove_trailing_whitespace
-          }
-        }
+            require('formatter.filetypes.any').remove_trailing_whitespace,
+          },
+        },
       }
-    end
-  }
+    end,
+  },
 }
