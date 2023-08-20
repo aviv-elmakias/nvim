@@ -66,6 +66,10 @@ vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 
 
 -- Git Related
 vim.keymap.set('n', '<leader>gi', '<cmd>Gitignore<cr>', { desc = 'Generate gitignore' })
+vim.keymap.set('n', '<leader>gds', '<cmd>Gvdiffsplit!<cr>', { desc = 'Git Diff Split' })
+vim.keymap.set('n', '<leader>gdh', '<cmd>diffget //2<cr>', { desc = 'Git Diff Get Left' })
+vim.keymap.set('n', '<leader>gdl', '<cmd>diffget //3<cr>', { desc = 'Git Diff Get Right' })
+vim.keymap.set('n', '<leader>gdc', '<cmd>only<cr>', { desc = 'Git Diff Close' })
 
 -- vim.keymap.set('n', '<leader>/', 'gcc', { desc = "Comment Line"})
 -- vim.keymap.set('v', '<leader>/', 'gc', { desc = "Comment Line"})

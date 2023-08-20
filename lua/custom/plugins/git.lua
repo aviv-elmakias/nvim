@@ -19,6 +19,16 @@ return {
     'wintermute-cell/gitignore.nvim',
     event = 'VeryLazy',
   },
+  -- {
+  --   'tanvirtin/vgit.nvim',
+  --   event = { 'BufReadPre', 'BufNewFile' },
+  --   dependencies = {
+  --     { 'nvim-lua/plenary.nvim' },
+  --   },
+  --   config = function()
+  --     require('vgit').setup()
+  --   end,
+  -- },
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
