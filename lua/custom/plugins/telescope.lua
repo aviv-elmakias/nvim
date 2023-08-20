@@ -28,11 +28,12 @@ return {
       { '<leader>fo', '<cmd>Telescope vim_options<cr>', desc = 'Options' },
       { '<leader>fR', '<cmd>Telescope resume<cr>', desc = 'Resume' },
       { '<leader>fw', "<cmd>:lua require('telescope.builtin').grep_string()<cr>", desc = 'Word (root dir)' },
-      -- workspaces 
-      { '<leader>wl', '<cmd>Telescope workspaces<cr>', desc = 'Projects'}
+      -- workspaces
+      { '<leader>wl', '<cmd>Telescope workspaces<cr>', desc = 'Projects' },
     },
     opts = {
       defaults = {
+        path_display = { 'truncate' },
         prompt_prefix = ' ',
         selection_caret = ' ',
         mappings = {
