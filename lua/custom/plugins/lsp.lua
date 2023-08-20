@@ -17,8 +17,8 @@ return {
     dependencies = {
       {
         'L3MON4D3/LuaSnip',
-        'hrsh7th/cmp-buffer',   -- Required
-        'hrsh7th/cmp-path',     -- Required
+        'hrsh7th/cmp-buffer', -- Required
+        'hrsh7th/cmp-path', -- Required
         'hrsh7th/cmp-nvim-lsp', -- Required
       },
     },
@@ -45,8 +45,8 @@ return {
         formatting = {
           fields = { 'kind', 'abbr', 'menu' },
           format = lspkind.cmp_format {
-            mode = 'symbol',       -- show only symbol annotations
-            maxwidth = 50,         -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            mode = 'symbol', -- show only symbol annotations
+            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
             ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 
             -- The function below will be called before any actual modifications from lspkind
@@ -88,11 +88,11 @@ return {
           { name = 'luasnip' },
         },
       }
-      cmp.event:on("menu_opened", function()
+      cmp.event:on('menu_opened', function()
         vim.b.copilot_suggestion_hidden = true
       end)
 
-      cmp.event:on("menu_closed", function()
+      cmp.event:on('menu_closed', function()
         vim.b.copilot_suggestion_hidden = false
       end)
     end,
@@ -144,13 +144,15 @@ return {
     end,
   },
   {
-    "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
     config = function()
-      on_attach = function(client, bufnr)
-        vim.keymap.set('n', '<leader>ci', '<cmd>TSToolsOrganizeImports<cr>', { buffer = bufnr })
-      end
-    end
+      require('typescript-tools').setup {
+        on_attach = function(client, bufnr)
+          vim.keymap.set('n', '<leader>ci', '<cmd>TSToolsOrganizeImports<cr>', { buffer = bufnr })
+        end,
+      }
+    end,
   },
   -- {
   --   'VonHeikemen/lsp-zero.nvim',
