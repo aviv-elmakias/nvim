@@ -23,6 +23,8 @@ vim.keymap.set('n', '<leader>wr', '<cmd>WorkspacesRemove<cr>', { desc = 'Remove 
 -- Buffers
 vim.keymap.set('n', '<leader>bp', '<cmd>BufferLineTogglePin<cr>', { desc = 'Toggle pin' })
 vim.keymap.set('n', '<leader>bP', '<cmd>BufferLineGroupClose ungrouped<cr>', { desc = 'Delete non-pinned buffers' })
+vim.keymap.set('n', '<leader>bl', '<cmd>BufferLineMoveNext<cr>', { desc = 'Move buffer to the left' })
+vim.keymap.set('n', '<leader>bh', '<cmd>BufferLineMovePrev<cr>', { desc = 'Move buffer to the right' })
 vim.keymap.set('n', '<tab>', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
 vim.keymap.set('n', '<S-tab>', '<cmd>bprevious<cr>', { desc = 'Previous Buffer' })
 vim.keymap.set('n', '<C-b>', '<cmd>Bdelete<cr>', { desc = 'Close Buffer' })
@@ -38,7 +40,6 @@ vim.keymap.set('n', '<leader>cr', '<cmd>OverseerRun<cr>', { desc = 'Run Overseer
 vim.keymap.set('n', '<leader>to', '<cmd>OverseerToggle<cr>', { desc = 'Overseer Output' })
 
 -- Diagnostics
-vim.keymap.set('n', '<leader>ca', '<cmd>CodeActionMenu<cr>', { desc = 'Code Actions' })
 vim.keymap.set('n', '<leader>qq', '<cmd>TroubleToggle document_diagnostics<cr>', { desc = 'Trouble Document' })
 vim.keymap.set('n', '<leader>qw', '<cmd>TroubleToggle workspace_diagnostics<cr>', { desc = 'Trouble Workspace' })
 vim.keymap.set('n', '<leader>ql', function()
@@ -63,9 +64,11 @@ vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', { desc = 
 vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', { desc = 'LSP References' })
 vim.keymap.set('n', 'gtd', '<cmd>lua vim.lsp.buf.type_definition()<cr>', { desc = 'LSP Type Definition' })
 vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'LSP Rename' })
+vim.keymap.set('n', '<leader>ca', '<cmd>CodeActionMenu<cr>', { desc = 'Code Actions' })
 
 -- Git Related
 vim.keymap.set('n', '<leader>gi', '<cmd>Gitignore<cr>', { desc = 'Generate gitignore' })
+vim.keymap.set('n', '<leader>gb', '<cmd>Git blame<cr>', { desc = 'Git blame' })
 vim.keymap.set('n', '<leader>gds', '<cmd>Gvdiffsplit!<cr>', { desc = 'Git Diff Split' })
 vim.keymap.set('n', '<leader>gdh', '<cmd>diffget //2<cr>', { desc = 'Git Diff Get Left' })
 vim.keymap.set('n', '<leader>gdl', '<cmd>diffget //3<cr>', { desc = 'Git Diff Get Right' })
