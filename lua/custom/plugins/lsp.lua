@@ -118,6 +118,7 @@ return {
               'lua_ls',
               'cssls',
               'html',
+              -- 'pylsp',
               'pyright',
               -- 'ruff_lsp',
             },
@@ -129,7 +130,8 @@ return {
     config = function()
       -- This is where all the LSP shenanigans will live
 
-      local lsp = require 'lsp-zero'
+      local lsp = require('lsp-zero').preset {}
+      local lspconfig = require 'lspconfig'
 
       lsp.on_attach(function(client, bufnr)
         lsp.default_keymaps { buffer = bufnr }
@@ -138,7 +140,15 @@ return {
       lsp.skip_server_setup { 'tsserver' }
 
       -- (Optional) Configure lua language server for neovim
-      require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+      lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+
+      lspconfig.pyright.setup {
+        root_dir = function(p)
+          local path = lspconfig.util.root_pattern('.git', 'setup.cfg', 'pyproject.toml', 'requirements.txt')(p)
+          print(path)
+          return path
+        end,
+      }
 
       lsp.setup()
     end,
@@ -149,7 +159,8 @@ return {
     config = function()
       require('typescript-tools').setup {
         on_attach = function(client, bufnr)
-          vim.keymap.set('n', '<leader>ci', '<cmd>TSToolsOrganizeImports<cr>', { buffer = bufnr })
+          vim.keymap.set('n', '<leader>cio', '<cmd>TSToolsOrganizeImports<cr>', { desc = 'Orgnize imports', buffer = bufnr })
+          vim.keymap.set('n', '<leader>cia', '<cmd>TSToolsAddMissingImports<cr>', { desc = 'Add missing imports', buffer = bufnr })
         end,
       }
     end,
