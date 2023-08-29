@@ -18,7 +18,8 @@ return {
           "eslint_d"
         },
         python = {
-          "ruff"
+          "mypy",
+          -- "ruff"
         },
         lua = {
           "selene"
