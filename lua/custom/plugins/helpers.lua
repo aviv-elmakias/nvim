@@ -22,12 +22,21 @@ return {
     end,
   },
   {
-    "gbprod/cutlass.nvim",
+    'gbprod/cutlass.nvim',
   },
   {
-    "chrishrb/gx.nvim",
-    event = { "BufEnter" },
-    dependencies = { "nvim-lua/plenary.nvim" },
+    'chrishrb/gx.nvim',
+    event = { 'BufEnter' },
+    dependencies = { 'nvim-lua/plenary.nvim' },
     config = true, -- default settings
+  },
+  {
+    'nvim-pack/nvim-spectre',
+    cmd = 'Spectre',
+    opts = { open_cmd = 'noswapfile vnew' },
+  -- stylua: ignore
+    keys = {
+      { "<leader>sr", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
+    },
   },
 }
