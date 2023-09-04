@@ -86,6 +86,7 @@ return {
         sources = {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
+          { name = 'path' },
         },
       }
       cmp.event:on('menu_opened', function()
@@ -161,6 +162,11 @@ return {
         on_attach = function(client, bufnr)
           vim.keymap.set('n', '<leader>cio', '<cmd>TSToolsOrganizeImports<cr>', { desc = 'Orgnize imports', buffer = bufnr })
           vim.keymap.set('n', '<leader>cia', '<cmd>TSToolsAddMissingImports<cr>', { desc = 'Add missing imports', buffer = bufnr })
+        end,
+        root_dir = function(p)
+          local path = require('lspconfig').util.root_pattern('.prettierrc', 'nx.json', 'tsconfig.base.json')(p)
+          print(path)
+          return path
         end,
       }
     end,
