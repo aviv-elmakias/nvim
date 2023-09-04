@@ -39,6 +39,21 @@ vim.keymap.set('n', '<leader>tb', '<cmd>BlamerToggle<cr>', { desc = 'Git blame' 
 vim.keymap.set('n', '<leader>cr', '<cmd>OverseerRun<cr>', { desc = 'Run Overseer' })
 vim.keymap.set('n', '<leader>to', '<cmd>OverseerToggle<cr>', { desc = 'Overseer Output' })
 
+-- lua fzf
+vim.keymap.set('n', '<leader>ff', '<cmd>lua require("fzf-lua").files()<cr>', { desc = 'Find Files (root dir)' })
+vim.keymap.set('n', '<leader>fg', '<cmd>lua require("fzf-lua").live_grep()<cr>', { desc = 'Grep (root dir)' })
+vim.keymap.set('n', '<leader>fb', '<cmd>lua require("fzf-lua").buffers()<cr>', { desc = 'Buffers' })
+vim.keymap.set('n', '<leader>fh', '<cmd>lua require("fzf-lua").help_tags()<cr>', { desc = 'Help Pages' })
+vim.keymap.set('n', '<leader>fm', '<cmd>lua require("fzf-lua").marks()<cr>', { desc = 'Jump to Mark' })
+vim.keymap.set('n', '<leader>fo', '<cmd>lua require("fzf-lua").vim_options()<cr>', { desc = 'Options' })
+vim.keymap.set('n', '<leader>fr', '<cmd>lua require("fzf-lua").oldfiles()<cr>', { desc = 'Recent' })
+vim.keymap.set('n', '<leader>fw', '<cmd>lua require("fzf-lua").grep_cword()<cr>', { desc = 'Word (root dir)' })
+vim.keymap.set('n', '<leader>fs', '<cmd>lua require("fzf-lua").grep_curbuf()<cr>', { desc = 'Search current buffer' })
+vim.keymap.set('n', '<leader>fc', '<cmd>lua require("fzf-lua").commands()<cr>', { desc = 'Commands' })
+vim.keymap.set('n', '<leader>fa', '<cmd>lua require("fzf-lua").autocommands()<cr>', { desc = 'Auto Commands' })
+vim.keymap.set('n', '<leader>fk', '<cmd>lua require("fzf-lua").keymaps()<cr>', { desc = 'Key Maps' })
+vim.keymap.set('v', '<leader>fw', '<cmd>lua require("fzf-lua").grep_visual()<cr>', { desc = 'Word (root dir)' })
+
 -- Diagnostics
 vim.keymap.set('n', '<leader>qq', '<cmd>TroubleToggle document_diagnostics<cr>', { desc = 'Trouble Document' })
 vim.keymap.set('n', '<leader>qw', '<cmd>TroubleToggle workspace_diagnostics<cr>', { desc = 'Trouble Workspace' })
@@ -67,7 +82,7 @@ vim.keymap.set('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 
 vim.keymap.set('n', '<leader>ca', '<cmd>CodeActionMenu<cr>', { desc = 'Code Actions' })
 
 -- Git Related
-vim.keymap.set('n', '<leader>gi', '<cmd>Gitignore<cr>', { desc = 'Generate gitignore' })
+-- vim.keymap.set('n', '<leader>gi', '<cmd>Gitignore<cr>', { desc = 'Generate gitignore' })
 vim.keymap.set('n', '<leader>gb', '<cmd>Git blame<cr>', { desc = 'Git blame' })
 vim.keymap.set('n', '<leader>gds', '<cmd>Gvdiffsplit!<cr>', { desc = 'Git Diff Split' })
 vim.keymap.set('n', '<leader>gdh', '<cmd>diffget //2<cr>', { desc = 'Git Diff Get Left' })

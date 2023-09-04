@@ -15,10 +15,10 @@ return {
     'tpope/vim-rhubarb',
     event = 'VeryLazy',
   },
-  {
-    'wintermute-cell/gitignore.nvim',
-    event = 'VeryLazy',
-  },
+  -- {
+  --   'wintermute-cell/gitignore.nvim',
+  --   event = 'VeryLazy',
+  -- },
   -- {
   --   'tanvirtin/vgit.nvim',
   --   event = { 'BufReadPre', 'BufNewFile' },
