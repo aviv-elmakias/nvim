@@ -146,7 +146,6 @@ return {
       lspconfig.pyright.setup {
         root_dir = function(p)
           local path = lspconfig.util.root_pattern('.git', 'setup.cfg', 'pyproject.toml', 'requirements.txt')(p)
-          print(path)
           return path
         end,
       }
@@ -165,7 +164,6 @@ return {
         end,
         root_dir = function(p)
           local path = require('lspconfig').util.root_pattern('.prettierrc', 'nx.json', 'tsconfig.base.json')(p)
-          print(path)
           return path
         end,
       }
