@@ -45,6 +45,14 @@ return {
             require('formatter.filetypes.javascript').prettierd,
             require('formatter.filetypes.javascript').eslint_d,
           },
+
+          toml = {
+            require('formatter.filetypes.toml').taplo,
+          },
+
+          yaml = {
+            require('formatter.filetypes.yaml').yamlfmt,
+          },
           -- Use the special "*" filetype for defining formatter configurations on
           -- any filetype
           ['*'] = {
