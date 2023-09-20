@@ -32,7 +32,7 @@ vim.keymap.set('n', '<leader>bc', '<cmd>Bdelete<cr>', { desc = 'Close Buffer' })
 
 -- UI Related
 vim.keymap.set('n', '<leader>e', '<cmd>Neotree<cr>', { desc = 'Treefile' })
-vim.keymap.set('n', '<leader>te', '<cmd>NeoTreeShowToggle<cr>', { desc = 'Treefile' })
+vim.keymap.set('n', '<leader>te', '<cmd>Neotree toggle<cr>', { desc = 'Treefile' })
 vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', { desc = 'LazyGit' })
 vim.keymap.set('n', '<leader>tb', '<cmd>BlamerToggle<cr>', { desc = 'Git blame' })
 
@@ -41,12 +41,13 @@ vim.keymap.set('n', '<leader>to', '<cmd>OverseerToggle<cr>', { desc = 'Overseer 
 
 -- lua fzf
 vim.keymap.set('n', '<leader>ff', '<cmd>lua require("fzf-lua").files()<cr>', { desc = 'Find Files (root dir)' })
+vim.keymap.set('n', '<leader><leader>', '<cmd>lua require("fzf-lua").files()<cr>', { desc = 'Find Files (root dir)' })
 vim.keymap.set('n', '<leader>fg', '<cmd>lua require("fzf-lua").live_grep()<cr>', { desc = 'Grep (root dir)' })
 vim.keymap.set('n', '<leader>fb', '<cmd>lua require("fzf-lua").buffers()<cr>', { desc = 'Buffers' })
 vim.keymap.set('n', '<leader>fh', '<cmd>lua require("fzf-lua").help_tags()<cr>', { desc = 'Help Pages' })
 vim.keymap.set('n', '<leader>fm', '<cmd>lua require("fzf-lua").marks()<cr>', { desc = 'Jump to Mark' })
-vim.keymap.set('n', '<leader>fo', '<cmd>lua require("fzf-lua").vim_options()<cr>', { desc = 'Options' })
-vim.keymap.set('n', '<leader>fr', '<cmd>lua require("fzf-lua").oldfiles()<cr>', { desc = 'Recent' })
+vim.keymap.set('n', '<leader>fr', '<cmd>lua require("fzf-lua").resume()<cr>', { desc = 'Resume' })
+vim.keymap.set('n', '<leader>fo', '<cmd>lua require("fzf-lua").oldfiles()<cr>', { desc = 'Old Files' })
 vim.keymap.set('n', '<leader>fw', '<cmd>lua require("fzf-lua").grep_cword()<cr>', { desc = 'Word (root dir)' })
 vim.keymap.set('n', '<leader>fs', '<cmd>lua require("fzf-lua").grep_curbuf()<cr>', { desc = 'Search current buffer' })
 vim.keymap.set('n', '<leader>fc', '<cmd>lua require("fzf-lua").commands()<cr>', { desc = 'Commands' })
