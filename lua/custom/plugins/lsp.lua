@@ -145,7 +145,7 @@ return {
 
       lspconfig.pyright.setup {
         root_dir = function(p)
-          local path = lspconfig.util.root_pattern('.git', 'setup.cfg', 'pyproject.toml', 'requirements.txt')(p)
+          local path = lspconfig.util.root_pattern('.git', 'setup.cfg', 'requirements.txt')(p)
           return path
         end,
       }
