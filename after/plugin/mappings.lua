@@ -31,8 +31,7 @@ vim.keymap.set('n', '<C-b>', '<cmd>Bdelete<cr>', { desc = 'Close Buffer' })
 vim.keymap.set('n', '<leader>bc', '<cmd>Bdelete<cr>', { desc = 'Close Buffer' })
 
 -- UI Related
-vim.keymap.set('n', '<leader>e', '<cmd>Neotree<cr>', { desc = 'Treefile' })
-vim.keymap.set('n', '<leader>te', '<cmd>Neotree toggle<cr>', { desc = 'Treefile' })
+vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', { desc = 'Treefile' })
 vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', { desc = 'LazyGit' })
 vim.keymap.set('n', '<leader>tb', '<cmd>BlamerToggle<cr>', { desc = 'Git blame' })
 
