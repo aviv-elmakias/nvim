@@ -29,6 +29,7 @@ vim.keymap.set('n', '<tab>', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
 vim.keymap.set('n', '<S-tab>', '<cmd>bprevious<cr>', { desc = 'Previous Buffer' })
 vim.keymap.set('n', '<C-b>', '<cmd>Bdelete<cr>', { desc = 'Close Buffer' })
 vim.keymap.set('n', '<leader>bc', '<cmd>Bdelete<cr>', { desc = 'Close Buffer' })
+vim.keymap.set('n', '<leader>h', '<cmd>BufferLinePick<cr>', { desc = 'Pick Buffer' })
 
 -- UI Related
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', { desc = 'Treefile' })
