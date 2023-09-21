@@ -9,7 +9,7 @@ return {
       options = {
         close_command = 'Bdelete! %d',
         diagnostics = 'nvim_lsp',
-        always_show_bufferline = false,
+        always_show_bufferline = true,
         offsets = {
           {
             filetype = 'neo-tree',
