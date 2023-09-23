@@ -7,6 +7,10 @@ return {
     end,
   },
   {
+    'ThePrimeagen/harpoon',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
+  {
     'kylechui/nvim-surround',
     config = function()
       require('nvim-surround').setup {

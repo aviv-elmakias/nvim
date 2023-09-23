@@ -16,6 +16,12 @@ vim.keymap.set('i', '<C-j>', '<Down>')
 vim.keymap.set('i', '<C-k>', '<Up>')
 vim.keymap.set('i', '<C-l>', '<Right>')
 
+vim.keymap.set('n', 'ha', '<cmd>lua require("harpoon.mark").add_file()<cr>', { desc = 'Add mark'})
+vim.keymap.set('n', 'hv', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', { desc = 'Show all marks'})
+vim.keymap.set('n', 'hd', '<cmd>lua require("harpoon.ui").nav_prev()<cr>', { desc = 'Show all marks'})
+vim.keymap.set('n', 'hf', '<cmd>lua require("harpoon.ui").nav_next()<cr>', { desc = 'Show all marks'})
+
+
 -- Workspaces
 vim.keymap.set('n', '<leader>wa', '<cmd>WorkspacesAdd<cr>', { desc = 'Add Workspace' })
 vim.keymap.set('n', '<leader>wr', '<cmd>WorkspacesRemove<cr>', { desc = 'Remove Current Workspace' })
