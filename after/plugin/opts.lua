@@ -44,5 +44,5 @@ vim.o.wrap = false
 
 vim.o.scrolloff = 10
 
-vim.cmd [[colorscheme kanagawa]]
+vim.cmd [[colorscheme moonfly]]
 

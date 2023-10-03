@@ -20,4 +20,5 @@ return {
       vim.cmd 'colorscheme github_dark'
     end,
   },
+  { 'bluz71/vim-moonfly-colors', name = 'moonfly', lazy = false, priority = 1000 },
 }
