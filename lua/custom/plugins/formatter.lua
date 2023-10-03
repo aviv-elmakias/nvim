@@ -53,6 +53,10 @@ return {
           yaml = {
             require('formatter.filetypes.yaml').yamlfmt,
           },
+
+          sh = {
+            require('formatter.filetypes.sh').shfmt,
+          },
           -- Use the special "*" filetype for defining formatter configurations on
           -- any filetype
           ['*'] = {
