@@ -27,15 +27,15 @@ vim.keymap.set('n', '<leader>wa', '<cmd>WorkspacesAdd<cr>', { desc = 'Add Worksp
 vim.keymap.set('n', '<leader>wr', '<cmd>WorkspacesRemove<cr>', { desc = 'Remove Current Workspace' })
 
 -- Buffers
-vim.keymap.set('n', '<leader>bp', '<cmd>BufferLineTogglePin<cr>', { desc = 'Toggle pin' })
-vim.keymap.set('n', '<leader>bP', '<cmd>BufferLineGroupClose ungrouped<cr>', { desc = 'Delete non-pinned buffers' })
-vim.keymap.set('n', '<leader>bl', '<cmd>BufferLineMoveNext<cr>', { desc = 'Move buffer to the left' })
-vim.keymap.set('n', '<leader>bh', '<cmd>BufferLineMovePrev<cr>', { desc = 'Move buffer to the right' })
-vim.keymap.set('n', '<tab>', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
-vim.keymap.set('n', '<S-tab>', '<cmd>bprevious<cr>', { desc = 'Previous Buffer' })
-vim.keymap.set('n', '<C-b>', '<cmd>Bdelete<cr>', { desc = 'Close Buffer' })
-vim.keymap.set('n', '<leader>bc', '<cmd>Bdelete<cr>', { desc = 'Close Buffer' })
-vim.keymap.set('n', '<leader>h', '<cmd>BufferLinePick<cr>', { desc = 'Pick Buffer' })
+-- vim.keymap.set('n', '<leader>bp', '<cmd>BufferLineTogglePin<cr>', { desc = 'Toggle pin' })
+-- vim.keymap.set('n', '<leader>bP', '<cmd>BufferLineGroupClose ungrouped<cr>', { desc = 'Delete non-pinned buffers' })
+-- vim.keymap.set('n', '<leader>bl', '<cmd>BufferLineMoveNext<cr>', { desc = 'Move buffer to the left' })
+-- vim.keymap.set('n', '<leader>bh', '<cmd>BufferLineMovePrev<cr>', { desc = 'Move buffer to the right' })
+-- vim.keymap.set('n', '<tab>', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
+-- vim.keymap.set('n', '<S-tab>', '<cmd>bprevious<cr>', { desc = 'Previous Buffer' })
+-- vim.keymap.set('n', '<C-b>', '<cmd>Bdelete<cr>', { desc = 'Close Buffer' })
+-- vim.keymap.set('n', '<leader>bc', '<cmd>Bdelete<cr>', { desc = 'Close Buffer' })
+-- vim.keymap.set('n', '<leader>h', '<cmd>BufferLinePick<cr>', { desc = 'Pick Buffer' })
 
 -- UI Related
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', { desc = 'Treefile' })
@@ -44,6 +44,8 @@ vim.keymap.set('n', '<leader>tb', '<cmd>BlamerToggle<cr>', { desc = 'Git blame' 
 
 vim.keymap.set('n', '<leader>cr', '<cmd>OverseerRun<cr>', { desc = 'Run Overseer' })
 vim.keymap.set('n', '<leader>to', '<cmd>OverseerToggle<cr>', { desc = 'Overseer Output' })
+
+vim.keymap.set('n', '<leader>zm', '<cmd>ZenMode<cr>', { desc = 'Zen Mode' })
 
 -- lua fzf
 vim.keymap.set('n', '<leader>ff', '<cmd>lua require("fzf-lua").files()<cr>', { desc = 'Find Files (root dir)' })
