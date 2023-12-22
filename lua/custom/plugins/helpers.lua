@@ -9,6 +9,13 @@ return {
   {
     'ThePrimeagen/harpoon',
     dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('harpoon').setup {
+        global_settings = {
+          mark_branch = true,
+        },
+      }
+    end,
   },
   {
     'kylechui/nvim-surround',
