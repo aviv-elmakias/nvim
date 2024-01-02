@@ -138,8 +138,6 @@ return {
         lsp.default_keymaps { buffer = bufnr }
       end)
 
-      lsp.skip_server_setup { 'tsserver' }
-
       -- (Optional) Configure lua language server for neovim
       lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
@@ -148,25 +146,15 @@ return {
           local path = lspconfig.util.root_pattern('.git', 'setup.cfg', 'requirements.txt')(p)
           return path
         end,
-      }
-
-      lsp.setup()
-    end,
-  },
-  {
-    'pmizio/typescript-tools.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-    config = function()
-      require('typescript-tools').setup {
-        on_attach = function(client, bufnr)
-          vim.keymap.set('n', '<leader>cio', '<cmd>TSToolsOrganizeImports<cr>', { desc = 'Orgnize imports', buffer = bufnr })
-          vim.keymap.set('n', '<leader>cia', '<cmd>TSToolsAddMissingImports<cr>', { desc = 'Add missing imports', buffer = bufnr })
-        end,
+      }	
+      lspconfig.tsserver.setup {
         root_dir = function(p)
-          local path = require('lspconfig').util.root_pattern('.prettierrc', 'nx.json', 'tsconfig.base.json')(p)
+          local path = lspconfig.util.root_pattern('.prettierrc', 'nx.json', 'tsconfig.base.json')(p)
           return path
         end,
       }
+
+      lsp.setup()
     end,
   },
   -- {
