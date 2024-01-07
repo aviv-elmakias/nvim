@@ -50,4 +50,10 @@ return {
       -- refer to the configuration section below
     },
   },
+  {
+    'j-hui/fidget.nvim',
+    config = function()
+      require('fidget').setup()
+    end,
+  },
 }
