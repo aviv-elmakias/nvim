@@ -1,4 +1,4 @@
-vim.keymap.set('n', ';', ':')
+-- vim.keymap.set('n', ';', ':')
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -22,9 +22,12 @@ vim.keymap.set('n', 'hd', '<cmd>lua require("harpoon.ui").nav_prev()<cr>', { des
 vim.keymap.set('n', 'hf', '<cmd>lua require("harpoon.ui").nav_next()<cr>', { desc = 'Show all marks'})
 
 
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
 -- Workspaces
-vim.keymap.set('n', '<leader>wa', '<cmd>WorkspacesAdd<cr>', { desc = 'Add Workspace' })
-vim.keymap.set('n', '<leader>wr', '<cmd>WorkspacesRemove<cr>', { desc = 'Remove Current Workspace' })
+-- vim.keymap.set('n', '<leader>wa', '<cmd>WorkspacesAdd<cr>', { desc = 'Add Workspace' })
+-- vim.keymap.set('n', '<leader>wr', '<cmd>WorkspacesRemove<cr>', { desc = 'Remove Current Workspace' })
 
 -- Buffers
 -- vim.keymap.set('n', '<leader>bp', '<cmd>BufferLineTogglePin<cr>', { desc = 'Toggle pin' })
