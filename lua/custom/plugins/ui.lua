@@ -56,4 +56,5 @@ return {
       require('fidget').setup()
     end,
   },
+  { 'kevinhwang91/nvim-bqf' },
 }
