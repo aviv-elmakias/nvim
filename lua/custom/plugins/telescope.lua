@@ -12,7 +12,7 @@ return {
     },
     keys = {
       { '<leader>,', '<cmd>Telescope buffers show_all_buffers=true<cr>', desc = 'Switch Buffer' },
-      { '<leader><space>', '<cmd>Telescope find_files<cr>', desc = 'Find Files (root dir)' },
+      { '<leader><space>', '<cmd>Telescope find_files hidden=true<cr>', desc = 'Find Files (root dir)' },
       -- find
       { '<leader>fb', '<cmd>Telescope buffers<cr>', desc = 'Buffers' },
       { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Find Files (root dir)' },
@@ -34,6 +34,7 @@ return {
       { '<leader>fo', '<cmd>Telescope vim_options<cr>', desc = 'Options' },
       { '<leader>fr', '<cmd>Telescope resume<cr>', desc = 'Resume' },
       { '<leader>fw', "<cmd>:lua require('telescope.builtin').grep_string()<cr>", desc = 'Word (root dir)' },
+      { '<leader>fw', 'y<ESC>:Telescope live_grep default_text=<c-r>0<CR>', mode = 'v' },
       -- workspaces
       -- { '<leader>wl', '<cmd>Telescope workspaces<cr>', desc = 'Projects' },
     },
@@ -70,6 +71,10 @@ return {
                 return require('telescope.actions').close(...)
               end,
             },
+          },
+          file_ignore_patterns = {
+            'node_modules',
+            '.git',
           },
         },
         extensions = {
