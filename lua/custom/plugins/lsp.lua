@@ -22,13 +22,11 @@ return {
       -- Note: autocompletion settings will not take effect
       local lsp_zero = require 'lsp-zero'
 
-
       lsp_zero.on_attach(function(client, bufnr)
         -- see :help lsp-zero-keybindings
         -- to learn the available actions
         lsp_zero.default_keymaps { buffer = bufnr }
       end)
-
 
       require('mason').setup()
       require('mason-lspconfig').setup {
@@ -66,6 +64,32 @@ return {
           local path = lspconfig.util.root_pattern('.prettierrc', 'nx.json', 'tsconfig.base.json')(p)
           return path
         end,
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = 'all',
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayParameterNameHints = 'all',
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+        },
       }
 
       lsp_zero.setup()
@@ -74,7 +98,6 @@ return {
       -- And you can configure cmp even more, if you want to.
       local cmp = require 'cmp'
       local lspkind = require 'lspkind'
-
 
       cmp.setup {
         formatting = {
@@ -100,7 +123,7 @@ return {
             select = true,
           },
           ['<Tab>'] = cmp.mapping(function(fallback)
-              fallback()
+            fallback()
           end, { 'i', 's' }),
           ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
